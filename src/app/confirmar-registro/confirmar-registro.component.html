@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmación de registro - Banco Politécnico</title>
+    <link rel="stylesheet" href="confirmar-registro.component.css">
+    <link rel="icon" type="favicon/x-icon" href="assets/img/banco.png">
+    
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="icono">
+                <img src="assets/img/banco.png" alt="PoliBanco" class="logo"> <!-- Logo del banco -->
+                <h1 class="nombre">BANCO<br>POLITÉCNICO</h1> <!-- Nombre del banco -->
+                <p class="text moving-text">Comprometidos contigo, hoy y siempre.</p>
+            </div>
+        </header>
+
+        <div class="container-fluid d-flex minh-100">
+            <div class="row flex-fill">
+                <div class="col-md-6 p-0 d-none d-md-block">
+                    <img src="assets/img/bancopolitecnico.png" alt="Imagen representativa" class="img-fluid h-100">
+                </div>
+                <div class="col-md-6 d-flex align-items-center align-items-center">
+                    <!--Formulario-->
+                    <div class="confirmation-message">
+                        <h2>¡Registro exitoso!</h2>
+                        <div class="icon-container">
+                        <img src="assets/img/iconoo.avif" alt="Ícono de éxito">
+                        </div>
+                        <p>A continuación, los detalles de tu cuenta:</p>
+                        <ul class="two-column-list">
+                            <li>
+                              <span class="label"><strong>Tipo de cuenta:</strong></span>
+                              <span class="value">{{ tipoCuenta }}</span>
+                            </li>
+                            <li>
+                              <span class="label"><strong>Nombre de la cuenta:</strong></span>
+                              <span class="value">{{ cuentaNombre }}</span>
+                            </li>
+                            <li>
+                              <span class="label"><strong>Número de cuenta:</strong></span>
+                              <span class="value">{{ cuentaNumero }}</span>
+                            </li>
+                        </ul>
+                          
+                        <!-- Botones de acción del formulario -->
+                        <div class="buttons">
+                        <button type="submit" (click)="onSubmit()">Iniciar sesión</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+</body>
+</html>

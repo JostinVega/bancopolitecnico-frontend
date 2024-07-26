@@ -1,0 +1,196 @@
+/* Estilos para la página de selección de tipo de cuenta */
+/* Estilos generales del cuerpo */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #E3F5EE !important;
+    color: #333;
+}
+
+/* Estilos para el contenedor principal */
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 100px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Animación */
+@keyframes slideAndFade {
+    0% {
+        transform: translateX(-100%);
+        opacity: 1;
+    }
+    70% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* Estilos para el texto animado */
+.moving-text {
+    display: flex;
+    font-size: 1em;
+    color: #C7D8E4;
+    animation: slideAndFade 3s linear normal;
+    width: 40%;
+    text-align: center;
+    opacity: 0;
+}
+
+/* Estilos para el ícono del banco */
+.icono {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    margin-bottom: 20px;
+}
+
+.icono img.logo {
+    max-width: 60px;
+    margin-right: 10px;
+}
+
+.icono h1.nombre {
+    font-size: 20px;
+    color: #2E86C1;
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif, Geneva, Tahoma, sans-serif;
+}
+
+
+/* Estilos para el mensaje de confirmación */
+.confirmation-message {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.confirmation-message h2 {
+    color: #206ea9;
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+}
+
+.confirmation-message p {
+    color: #555;
+    font-size: 18px;
+    margin-bottom: 30px;
+    font-family: 'Arial', sans-serif;
+}
+
+.confirmation-message ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0 0 30px;
+    font-size: 18px;
+    font-family: 'Arial', sans-serif;
+}
+
+.confirmation-message ul li {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.confirmation-message ul li strong {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.confirmation-message .buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.confirmation-message .buttons button {
+    padding: 10px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #206ea9;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.confirmation-message .buttons button:hover {
+    background-color: #2e86c1;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.confirmation-message .icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.confirmation-message .icon-container img {
+    width: 80px;
+    height: 80px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+.two-column-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto; /* Center the list */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .two-column-list li {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%; /* Ensure the items take full width */
+    max-width: 600px; /* Optional: to limit the maximum width */
+    padding: 5px 0;
+    box-sizing: border-box; /* Include padding in the width calculation */
+  }
+  
+  .two-column-list .label {
+    flex: 0 0 50%; /* Make the label column narrower */
+    text-align: left;
+    padding-right: 10px;
+    font-size: 15px;
+  }
+  
+  .two-column-list .value {
+    flex: 0 0 50%; /* Make the value column wider */
+    text-align: left;
+    font-size: 15px;
+  }
+  
+  
+  

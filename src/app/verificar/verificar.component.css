@@ -1,0 +1,192 @@
+/* Estilos para la página de verificación */
+/* Estilos generales del cuerpo */
+
+
+/* Estilos para el cuerpo del documento */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #E3F5EE !important;
+    color: #333;
+}
+
+/* Estilos para el contenedor principal */
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 100px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Animación */
+@keyframes slideAndFade {
+    0% {
+        transform: translateX(-100%);
+        opacity: 1;
+    }
+    70% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* Estilos para el texto animado */
+.moving-text {
+    display: flex;
+    font-size: 1em;
+    color: #C7D8E4;
+    animation: slideAndFade 3s linear normal;
+    width: 40%;
+    text-align: center;
+    opacity: 0;
+}
+
+/* Estilos para el ícono del banco */
+.icono {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    margin-bottom: 20px;
+}
+
+.icono img.logo {
+    max-width: 60px;
+    margin-right: 10px;
+}
+
+.icono h1.nombre {
+    font-size: 20px;
+    color: #2E86C1;
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif, Geneva, Tahoma, sans-serif;
+}
+
+/* Estilos para el formulario de verificación */
+.verification-form {
+    flex: 1;
+    width: 80%; /* Ajusta el ancho del contenedor */
+    max-width: 400px; /* Establece un ancho máximo para el contenedor */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 20px;
+}
+
+
+.verification-form form {
+    padding: 5px 35px;
+    text-align: center;
+}
+
+.verification-form h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #206ea9;
+}
+
+.verification-form p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* Estilos para el código de verificación */
+.verification-form .verification-code {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.verification-form .verification-code input {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 24px;
+    margin: 0 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.verification-form .verification-code input:focus {
+    border-color: #206ea9;
+    outline: none;
+}
+
+/* Estilos para los botones del formulario */
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.form-buttons button {
+    background-color: #206ea9;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 120px;
+}
+
+.form-buttons button:hover {
+    background-color: #2E86C1;
+}
+
+.form-buttons .btn-regresar{
+    background-color: #ccc;
+}
+
+.form-buttons .btn-regresar:hover {
+    background-color: #d2d1d1;
+}
+
+.btn-reenviar {
+    background-color: #206ea9;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 150px;
+}
+
+.btn-reenviar{
+    background-color: #ccc;
+}
+
+.btn-reenviar:hover {
+    background-color: #d2d1d1;
+}
+
+/*Responsive*/
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+    .verification-form {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .verification-form {
+        padding: 10px;
+    }
+}
+

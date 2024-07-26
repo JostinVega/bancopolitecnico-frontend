@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificación de identidad - Banco Politécnico</title>
+    <link rel="stylesheet" href="verificar.component.css">
+    <link rel="icon" type="favicon/x-icon" href="assets/img/banco.png">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="icono">
+                <img src="assets/img/banco.png" alt="PoliBanco" class="logo"> <!-- Logo del banco -->
+                <h1 class="nombre">BANCO<br>POLITÉCNICO</h1> <!-- Nombre del banco -->
+                <p class="text moving-text">Comprometidos contigo, hoy y siempre.</p>
+            </div>
+        </header>
+
+        <div class="container-fluid d-flex minh-100">
+            <div class="row flex-fill">
+                <div class="col-md-6 p-0 d-none d-md-block">
+                    <img src="assets/img/bancopolitecnico.png" alt="Imagen representativa" class="img-fluid h-100">
+                </div>
+                <div class="col-md-6 d-flex align-items-center align-items-center">
+                    <!--Formulario-->
+                    <div class="verification-form" (ngSubmit)="onSubmit()">
+                        <!-- Formulario de registro -->
+                        <form id="verificationForm" (ngSubmit)="onSubmit()" #form="ngForm">
+                            <h3>Verificación de identidad</h3>
+                            <p>Se ha enviado un código de verificación a su correo electrónico y/o número de teléfono proporcionado.</p>
+                          
+                            <div class="verification-code">
+                              <input type="text" id="digit1" name="digit1" maxlength="1" [(ngModel)]="digits[0]" (keydown)="onKeyDown($event, 0)" (input)="onInput($event, 0)" required autofocus>
+                              <input type="text" id="digit2" name="digit2" maxlength="1" [(ngModel)]="digits[1]" (keydown)="onKeyDown($event, 1)" (input)="onInput($event, 1)" required>
+                              <input type="text" id="digit3" name="digit3" maxlength="1" [(ngModel)]="digits[2]" (keydown)="onKeyDown($event, 2)" (input)="onInput($event, 2)" required>
+                              <input type="text" id="digit4" name="digit4" maxlength="1" [(ngModel)]="digits[3]" (keydown)="onKeyDown($event, 3)" (input)="onInput($event, 3)" required>
+                              <input type="text" id="digit5" name="digit5" maxlength="1" [(ngModel)]="digits[4]" (keydown)="onKeyDown($event, 4)" (input)="onInput($event, 4)" required>
+                            </div>
+                          
+                            <div class="buttons">
+                              <button type="button" (click)="resendCode()" class="btn-reenviar">Reenviar código</button>
+                            </div>
+                          
+                            <div class="form-buttons">
+                                <button type="button" (click)="goBack()" class="btn-regresar">Regresar</button>
+                                <button type="submit" class="btn-siguiente">Verificar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
