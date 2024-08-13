@@ -77,7 +77,7 @@ export class VerPerfilComponent implements OnInit {
   }
 
 
-  /*navigateToNewAccount(): void {
+  navigateToNewAccount(): void {
     const numeroIdentidad = this.getNumeroIdentidad();
     if (numeroIdentidad) {
       this.accountService.getUserInfo(numeroIdentidad).subscribe(
@@ -107,9 +107,9 @@ export class VerPerfilComponent implements OnInit {
     } else {
       console.error('Número de Identidad no disponible');
     }
-  }*/
+  }
 
-    navigateToNewAccount(): void {
+    /*navigateToNewAccount(): void {
       const numeroIdentidad = this.getNumeroIdentidad();
       if (numeroIdentidad) {
         this.accountService.getUserInfo(numeroIdentidad).subscribe(
@@ -148,7 +148,7 @@ export class VerPerfilComponent implements OnInit {
       } else {
         console.error('Número de Identidad no disponible');
       }
-    }
+    }*/
     
 
   navigateToVerUsuario(): void {

@@ -17,7 +17,7 @@ export class ConfirmarRegistroComponent implements OnInit {
   email: string | undefined;
   phoneNumber: string | undefined;
 
-  private apiUrl = 'https://back-notificaciones.vercel.app'; // NOTIFICACIONES
+  private apiUrl = 'https://bancopolitecnico-backend.vercel.app'; // NOTIFICACIONES
 
   constructor(private registroService: RegistroService,
               private router: Router,

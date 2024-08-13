@@ -89,7 +89,7 @@ export class ConfirmarTransferenciaComponent implements OnInit {
     }
   }
 
-  /*async confirmTransfer(): Promise<void> {
+  async confirmTransfer(): Promise<void> {
     if (this.amount && this.saldo && this.amount <= this.saldo) {
       try {
         if (!this.correoElectronico || !this.numeroTelefono) {
@@ -130,9 +130,9 @@ export class ConfirmarTransferenciaComponent implements OnInit {
     } else {
       alert('El monto de la transferencia no puede ser mayor que el saldo de la cuenta.');
     }
-  }*/
+  }
 
-    async confirmTransfer(): Promise<void> {
+    /*async confirmTransfer(): Promise<void> {
       if (this.amount && this.saldo && this.amount <= this.saldo) {
         try {
           if (!this.correoElectronico || !this.numeroTelefono) {
@@ -184,7 +184,7 @@ export class ConfirmarTransferenciaComponent implements OnInit {
       } else {
         alert('El monto de la transferencia no puede ser mayor que el saldo de la cuenta.');
       }
-    }
+    }*/
     
 
   /*  async confirmTransfer(): Promise<void> {
@@ -285,7 +285,7 @@ export class ConfirmarTransferenciaComponent implements OnInit {
       this.router.navigate(['/transferencia'], { queryParams: { usuario: this.usuario } });
     }
   
-    /*navigateToNewAccount(): void {
+    navigateToNewAccount(): void {
       const numeroIdentidad = this.numeroIdentidad;
       if (numeroIdentidad) {
         this.accountService.getUserInfo(numeroIdentidad).subscribe(
@@ -315,9 +315,9 @@ export class ConfirmarTransferenciaComponent implements OnInit {
       } else {
         console.error('Número de Identidad no disponible');
       }
-    }*/
+    }
 
-      navigateToNewAccount(): void {
+      /*navigateToNewAccount(): void {
         const numeroIdentidad = this.numeroIdentidad;
         if (numeroIdentidad) {
           this.accountService.getUserInfo(numeroIdentidad).subscribe(
@@ -356,7 +356,7 @@ export class ConfirmarTransferenciaComponent implements OnInit {
         } else {
           console.error('Número de Identidad no disponible');
         }
-      }
+      }*/
       
   
     navigateToVerUsuario(): void {

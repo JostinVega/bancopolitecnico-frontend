@@ -21,7 +21,7 @@ export class ConfirmarCuentaComponent implements OnInit {
   email: string = ''; 
   phoneNumber: string = '';
 
-  private apiUrl = 'https://back-notificaciones.vercel.app'; // NOTIFICACIONES
+  private apiUrl = 'https://bancopolitecnico-backend.vercel.app'; // NOTIFICACIONES
 
   constructor(
     private route: ActivatedRoute,
@@ -197,7 +197,7 @@ export class ConfirmarCuentaComponent implements OnInit {
     this.router.navigate(['/transferencia'], { queryParams: { usuario: this.usuario } });
   }
 
-  /*navigateToNewAccount(): void {
+  navigateToNewAccount(): void {
     const numeroIdentidad = this.numeroIdentidad;
     if (numeroIdentidad) {
       this.accountService.getUserInfo(numeroIdentidad).subscribe(
@@ -227,9 +227,9 @@ export class ConfirmarCuentaComponent implements OnInit {
     } else {
       console.error('Número de Identidad no disponible');
     }
-  }*/
+  }
 
-    navigateToNewAccount(): void {
+    /*navigateToNewAccount(): void {
       const numeroIdentidad = this.numeroIdentidad;
       if (numeroIdentidad) {
         this.accountService.getUserInfo(numeroIdentidad).subscribe(
@@ -268,7 +268,7 @@ export class ConfirmarCuentaComponent implements OnInit {
       } else {
         console.error('Número de Identidad no disponible');
       }
-    }
+    }*/
     
 
   navigateToVerUsuario(): void {

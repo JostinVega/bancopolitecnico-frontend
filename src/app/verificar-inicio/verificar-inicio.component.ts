@@ -97,7 +97,7 @@ export class VerificarInicioComponent {
         response => {
           console.log('Usuario bloqueado:', response);
           this.enviarNotificacionBloqueo();
-          this.enviarNotificacionBloqueo();
+          //this.enviarNotificacionBloqueo();
           alert('Su cuenta ha sido bloqueada debido a múltiples intentos fallidos. Contacte a soporte para más ayuda.');
           this.router.navigate(['/home']); // Redireccionar a la página de inicio
         },
@@ -114,7 +114,7 @@ export class VerificarInicioComponent {
     if (this.correo_electronico && this.numero_telefono) {
       const subject = 'Cuenta Bloqueada';
       const message = 'Su cuenta ha sido bloqueada debido a multiples intentos fallidos de inicio de sesion. Contacte a soporte para mas ayuda.';
-      this.http.post('https://back-notificaciones.vercel.app/send-confirmation', {
+      this.http.post('https://bancopolitecnico-backend.vercel.app/send-confirmation', {
         email: this.correo_electronico,
         phoneNumber: this.numero_telefono,
         subject,
@@ -144,7 +144,7 @@ export class VerificarInicioComponent {
       const subject = 'Cuenta Bloqueada';
       const message = 'Su cuenta ha sido bloqueada debido a multiples intentos fallidos de inicio de sesion. Contacte a soporte para mas ayuda.';
       console.log('Datos de notificación:', { email: this.correo_electronico, phoneNumber: this.numero_telefono, subject, message });
-      this.http.post('https://back-notificaciones.vercel.app/send-confirmation', {
+      this.http.post('https://bancopolitecnico-backend.vercel.app/send-confirmation', {
         email: this.correo_electronico,
         //phoneNumber: this.numero_telefono,
         subject,

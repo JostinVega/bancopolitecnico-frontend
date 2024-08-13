@@ -52,7 +52,7 @@ export class RegistroComponent implements OnInit {
     this.errorMessage = '';
   }
 
-  async onSubmit(): Promise<void> {
+  /*async onSubmit(): Promise<void> {
     if (this.registrationForm.valid) {
       const formValues = this.registrationForm.value;
   
@@ -95,10 +95,10 @@ export class RegistroComponent implements OnInit {
         this.errorMessage = 'Error del servidor. Por favor, inténtelo de nuevo más tarde.';
       }
     }
-  }
+  }*/
   
 
-  /*async onSubmit(): Promise<void> {
+  async onSubmit(): Promise<void> {
     if (this.registrationForm.valid) {
       const formValues = this.registrationForm.value;
 
@@ -131,7 +131,7 @@ export class RegistroComponent implements OnInit {
         this.errorMessage = 'Error del servidor. Por favor, inténtelo de nuevo más tarde.';
       }
     }
-  }*/
+  }
 
   private async checkDuplicateData(formValues: any): Promise<boolean> {
     const formattedPhoneNumber = `+593${formValues.numero_telefono.slice(1)}`;

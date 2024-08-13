@@ -35,7 +35,7 @@ export class ComprobanteTransferenciaComponent implements OnInit {
 
   email: string = '';
   phoneNumber: string = '';
-  private apiUrl = 'https://back-notificaciones.vercel.app';
+  private apiUrl = 'https://bancopolitecnico-backend.vercel.app';
 
 
 

@@ -228,7 +228,7 @@ export class ContactarSoporteComponent implements OnInit {
     this.router.navigate(['/transferencia'], { queryParams: { usuario: this.usuario } });
   }
 
-  /*navigateToNewAccount(): void {
+  navigateToNewAccount(): void {
     const numeroIdentidad = this.numeroIdentidad;
     if (numeroIdentidad) {
       this.accountService.getUserInfo(numeroIdentidad).subscribe(
@@ -258,9 +258,9 @@ export class ContactarSoporteComponent implements OnInit {
     } else {
       console.error('Número de Identidad no disponible');
     }
-  }*/
+  }
 
-    navigateToNewAccount(): void {
+    /*navigateToNewAccount(): void {
       const numeroIdentidad = this.numeroIdentidad;
       if (numeroIdentidad) {
         this.accountService.getUserInfo(numeroIdentidad).subscribe(
@@ -299,7 +299,7 @@ export class ContactarSoporteComponent implements OnInit {
       } else {
         console.error('Número de Identidad no disponible');
       }
-    }
+    }*/
     
 
   navigateToVerUsuario(): void {

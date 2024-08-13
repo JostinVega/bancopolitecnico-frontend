@@ -105,7 +105,7 @@ export class VerifyChangePasswordComponent {
         response => {
           console.log('Usuario bloqueado:', response);
           this.enviarNotificacionBloqueo();
-          this.enviarNotificacionBloqueo();
+          //this.enviarNotificacionBloqueo();
           alert('Su cuenta ha sido bloqueada debido a múltiples intentos fallidos. Contacte a soporte para más ayuda.');
           this.router.navigate(['/home']); // Redireccionar a la página de inicio
         },
@@ -125,7 +125,7 @@ export class VerifyChangePasswordComponent {
       const message = 'Hemos detectado un intento de cambio de clave en su cuenta. Si usted no realizo esta solicitud, le recomendamos contactar de inmediato a soporte tecnico para garantizar la seguridad de su cuenta.';
       console.log('Datos de notificación:', { email: this.email, phoneNumber: this.phoneNumber, subject, message });
 
-      this.http.post('https://back-notificaciones.vercel.app/send-confirmation', {
+      this.http.post('https://bancopolitecnico-backend.vercel.app/send-confirmation', {
         email: this.email,
         phoneNumber: this.phoneNumber,
         subject,
@@ -153,7 +153,7 @@ export class VerifyChangePasswordComponent {
       const message = 'Hemos detectado un intento de cambio de clave en su cuenta. Si usted no realizo esta solicitud, le recomendamos contactar de inmediato a soporte tecnico para garantizar la seguridad de su cuenta.';
       console.log('Datos de notificación:', { email: this.email, subject, message });
 
-      this.http.post('https://back-notificaciones.vercel.app/send-confirmation', {
+      this.http.post('https://bancopolitecnico-backend.vercel.app/send-confirmation', {
         email: this.email,
         //phoneNumber: this.phoneNumber,
         subject,
@@ -234,7 +234,7 @@ export class VerifyChangePasswordComponent {
     this.router.navigate(['/transferencia'], { queryParams: { usuario: this.usuario } });
   }
 
-  /*navigateToNewAccount(): void {
+  navigateToNewAccount(): void {
     const numeroIdentidad = this.numeroIdentidad;
     if (numeroIdentidad) {
       this.accountService.getUserInfo(numeroIdentidad).subscribe(
@@ -264,9 +264,9 @@ export class VerifyChangePasswordComponent {
     } else {
       console.error('Número de Identidad no disponible');
     }
-  }*/
+  }
 
-    navigateToNewAccount(): void {
+    /*navigateToNewAccount(): void {
       const numeroIdentidad = this.numeroIdentidad;
       if (numeroIdentidad) {
         this.accountService.getUserInfo(numeroIdentidad).subscribe(
@@ -305,7 +305,7 @@ export class VerifyChangePasswordComponent {
       } else {
         console.error('Número de Identidad no disponible');
       }
-    }
+    }*/
     
 
   navigateToVerUsuario(): void {

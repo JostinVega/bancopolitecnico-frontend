@@ -90,13 +90,13 @@ export class VerificarUpdatePersonalComponent {
     }
   }
 
-  async enviarNotificacionBloqueo(): Promise<void> {
+  /*async enviarNotificacionBloqueo(): Promise<void> {
     const subject = 'Cuenta Bloqueada';
     const message = 'Su cuenta ha sido bloqueada debido a múltiples intentos fallidos de verificación de código. Por favor, contacte a soporte para más ayuda.';
   
     try {
       // Primer envío de la notificación de bloqueo
-      const response = await this.http.post('https://back-notificaciones.vercel.app/send-confirmation', {
+      const response = await this.http.post('https://bancopolitecnico-backend.vercel.app/send-confirmation', {
         email: this.oldEmail,
         phoneNumber: this.oldPhone,
         subject: subject,
@@ -105,7 +105,7 @@ export class VerificarUpdatePersonalComponent {
       console.log('Primera notificación de bloqueo enviada:', response);
   
       // Reenvío automático de la notificación de bloqueo
-      const secondResponse = await this.http.post('https://back-notificaciones.vercel.app/send-confirmation', {
+      const secondResponse = await this.http.post('https://bancopolitecnico-backend.vercel.app/send-confirmation', {
         email: this.oldEmail,
         phoneNumber: this.oldPhone,
         subject: subject,
@@ -116,15 +116,15 @@ export class VerificarUpdatePersonalComponent {
     } catch (error) {
       console.error('Error al enviar la notificación de bloqueo:', error);
     }
-  }
+  }*/
   
 
-  /*async enviarNotificacionBloqueo(): Promise<void> {
+  async enviarNotificacionBloqueo(): Promise<void> {
     const subject = 'Cuenta Bloqueada';
     const message = 'Su cuenta ha sido bloqueada debido a múltiples intentos fallidos de verificación de código. Por favor, contacte a soporte para más ayuda.';
 
     try {
-      const response = await this.http.post('https://back-notificaciones.vercel.app/send-confirmation', {
+      const response = await this.http.post('https://bancopolitecnico-backend.vercel.app/send-confirmation', {
         email: this.oldEmail,
         phoneNumber: this.oldPhone,
         subject: subject,
@@ -134,7 +134,7 @@ export class VerificarUpdatePersonalComponent {
     } catch (error) {
       console.error('Error al enviar la notificación de bloqueo:', error);
     }
-  }*/
+  }
 
   async updatePersonalInfo(email: string, phone: string, numeroIdentidad: string): Promise<void> {
     try {
@@ -189,7 +189,7 @@ export class VerificarUpdatePersonalComponent {
     this.router.navigate(['/transferencia'], { queryParams: { usuario: this.usuario } });
   }
 
-  /*navigateToNewAccount(): void {
+  navigateToNewAccount(): void {
     const numeroIdentidad = this.numeroIdentidad;
     if (numeroIdentidad) {
       this.accountService.getUserInfo(numeroIdentidad).subscribe(
@@ -219,9 +219,9 @@ export class VerificarUpdatePersonalComponent {
     } else {
       console.error('Número de Identidad no disponible');
     }
-  }*/
+  }
 
-    navigateToNewAccount(): void {
+    /*navigateToNewAccount(): void {
       const numeroIdentidad = this.numeroIdentidad;
       if (numeroIdentidad) {
         this.accountService.getUserInfo(numeroIdentidad).subscribe(
@@ -260,7 +260,7 @@ export class VerificarUpdatePersonalComponent {
       } else {
         console.error('Número de Identidad no disponible');
       }
-    }
+    }*/
     
 
   navigateToVerUsuario(): void {

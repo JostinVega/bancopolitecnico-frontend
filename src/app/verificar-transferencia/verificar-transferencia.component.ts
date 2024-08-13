@@ -313,7 +313,7 @@ export class VerificarTransferenciaComponent implements OnInit {
         response => {
           console.log('Usuario bloqueado:', response);
           this.enviarNotificacionBloqueo();
-          this.enviarNotificacionBloqueo();
+          //this.enviarNotificacionBloqueo();
           alert('Su cuenta ha sido bloqueada debido a múltiples intentos fallidos. Contacte a soporte para más ayuda.');
           this.router.navigate(['/home']); // Redireccionar a la página de inicio
         },
@@ -331,7 +331,7 @@ export class VerificarTransferenciaComponent implements OnInit {
       const message = 'Hemos detectado un intento de transferencia desde su cuenta. Si usted no realizo esta solicitud, le recomendamos contactar de inmediato a soporte tecnico para asegurar la proteccion de sus fondos.';
       console.log('Datos de notificación:', { email: this.correo_electronico, phoneNumber: this.numero_telefono, subject, message });
 
-      this.http.post('https://back-notificaciones.vercel.app/send-confirmation', {
+      this.http.post('https://bancopolitecnico-backend.vercel.app/send-confirmation', {
         email: this.correo_electronico,
         phoneNumber: this.numero_telefono,
         subject,
@@ -411,7 +411,7 @@ export class VerificarTransferenciaComponent implements OnInit {
     this.router.navigate(['/transferencia'], { queryParams: { usuario: this.usuario } });
   }
 
-  /*navigateToNewAccount(): void {
+  navigateToNewAccount(): void {
     const numeroIdentidad = this.numeroIdentidad;
     if (numeroIdentidad) {
       this.accountService.getUserInfo(numeroIdentidad).subscribe(
@@ -441,9 +441,9 @@ export class VerificarTransferenciaComponent implements OnInit {
     } else {
       console.error('Número de Identidad no disponible');
     }
-  }*/
+  }
 
-    navigateToNewAccount(): void {
+    /*navigateToNewAccount(): void {
       const numeroIdentidad = this.numeroIdentidad;
       if (numeroIdentidad) {
         this.accountService.getUserInfo(numeroIdentidad).subscribe(
@@ -482,7 +482,7 @@ export class VerificarTransferenciaComponent implements OnInit {
       } else {
         console.error('Número de Identidad no disponible');
       }
-    }
+    }*/
     
 
   navigateToVerUsuario(): void {

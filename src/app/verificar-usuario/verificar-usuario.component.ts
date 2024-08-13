@@ -63,7 +63,7 @@ export class VerificarUsuarioComponent implements OnInit{
         if (this.attempts >= 3) {
           alert('Ha excedido el número de intentos. Intente nuevamente más tarde.');
           this.enviarNotificacionBloqueo();
-          this.enviarNotificacionBloqueo();
+          //this.enviarNotificacionBloqueo();
           this.router.navigate(['/home']); // Redireccionar a la página de inicio
         } else {
           alert('Código de verificación incorrecto. Intento ' + this.attempts + ' de 3.');
@@ -81,7 +81,7 @@ export class VerificarUsuarioComponent implements OnInit{
       const message = 'Se ha detectado un intento de recuperación de clave para su cuenta. Si usted no realizo esta solicitud, por favor contacte a soporte tecnico para asegurar la seguridad de su cuenta.';
       console.log('Datos de notificación:', { email: this.email, phoneNumber: this.phoneNumber, subject, message });
 
-      this.http.post('https://back-notificaciones.vercel.app/send-confirmation', {
+      this.http.post('https://bancopolitecnico-backend.vercel.app/send-confirmation', {
         email: this.email,
         phoneNumber: this.phoneNumber,
         subject,
@@ -108,7 +108,7 @@ export class VerificarUsuarioComponent implements OnInit{
       const message = 'Se ha detectado un intento de recuperación de usuario para su cuenta. Si usted no realizo esta solicitud, por favor contacte a soporte tecnico para asegurar la seguridad de su cuenta.';
       console.log('Datos de notificación:', { email: this.email, subject, message });
 
-      this.http.post('https://back-notificaciones.vercel.app/send-confirmation', {
+      this.http.post('https://bancopolitecnico-backend.vercel.app/send-confirmation', {
         email: this.email,
         //phoneNumber: this.phoneNumber,
         subject,

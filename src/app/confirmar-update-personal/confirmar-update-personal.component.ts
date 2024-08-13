@@ -43,7 +43,7 @@ export class ConfirmarUpdatePersonalComponent {
   enviarNotificacionActualizacion(): void {
     const subject = 'Actualización de datos exitosa';
     const message = `Sus datos han sido actualizados exitosamente. Su correo registrado es ${this.newEmail} y su número de teléfono registrado es ${this.newPhone}.`;
-    this.http.post('https://back-notificaciones.vercel.app/send-confirmation', { email: this.oldEmail, phoneNumber: this.oldPhone, subject, message }).subscribe(
+    this.http.post('https://bancopolitecnico-backend.vercel.app/send-confirmation', { email: this.oldEmail, phoneNumber: this.oldPhone, subject, message }).subscribe(
       response => {
         console.log('Notificación de actualización enviada:', response);
       },
@@ -57,7 +57,7 @@ export class ConfirmarUpdatePersonalComponent {
     this.router.navigate(['/transferencia'], { queryParams: { usuario: this.usuario } });
   }
 
-  /*navigateToNewAccount(): void {
+  navigateToNewAccount(): void {
     const numeroIdentidad = this.numeroIdentidad;
     if (numeroIdentidad) {
       this.accountService.getUserInfo(numeroIdentidad).subscribe(
@@ -87,9 +87,9 @@ export class ConfirmarUpdatePersonalComponent {
     } else {
       console.error('Número de Identidad no disponible');
     }
-  }*/
+  }
 
-    navigateToNewAccount(): void {
+    /*navigateToNewAccount(): void {
       const numeroIdentidad = this.numeroIdentidad;
       if (numeroIdentidad) {
         this.accountService.getUserInfo(numeroIdentidad).subscribe(
@@ -128,7 +128,7 @@ export class ConfirmarUpdatePersonalComponent {
       } else {
         console.error('Número de Identidad no disponible');
       }
-    }
+    }*/
     
 
   navigateToVerUsuario(): void {

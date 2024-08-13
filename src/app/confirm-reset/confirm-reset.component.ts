@@ -10,7 +10,7 @@ import { UsuarioDataService } from '../services/usuario-data.service';
   styleUrls: ['./confirm-reset.component.css']
 })
 export class ConfirmResetComponent implements OnInit{
-  private apiUrl = 'https://back-notificaciones.vercel.app'; // Asegúrate de que esta URL es correcta
+  private apiUrl = 'https://bancopolitecnico-backend.vercel.app'; // Asegúrate de que esta URL es correcta
   email: string = ''; // Inicializa como vacío
   phoneNumber: string = ''; // Inicializa como vacío
 

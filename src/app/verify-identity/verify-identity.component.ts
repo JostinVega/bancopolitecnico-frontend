@@ -84,7 +84,7 @@ export class VerifyIdentityComponent implements OnInit {
         if (this.attempts >= 3) {
           alert('Ha excedido el número de intentos. Intente nuevamente más tarde.');
           this.enviarNotificacionBloqueo();
-          this.enviarNotificacionBloqueo();
+          //this.enviarNotificacionBloqueo();
           this.router.navigate(['/home']); // Redireccionar a la página de inicio
         } else {
           alert('Código de verificación incorrecto. Intento ' + this.attempts + ' de 3.');
@@ -102,7 +102,7 @@ export class VerifyIdentityComponent implements OnInit {
       const message = 'Se ha detectado un intento de recuperación de clave para su cuenta. Si usted no realizo esta solicitud, por favor contacte a soporte tecnico para asegurar la seguridad de su cuenta.';
       console.log('Datos de notificación:', { email: this.email, phoneNumber: this.phoneNumber, subject, message });
 
-      this.http.post('https://back-notificaciones.vercel.app/send-confirmation', {
+      this.http.post('https://bancopolitecnico-backend.vercel.app/send-confirmation', {
         email: this.email,
         phoneNumber: this.phoneNumber,
         subject,
@@ -122,14 +122,14 @@ export class VerifyIdentityComponent implements OnInit {
   */
 
   //SOLO CORREO
-  /*enviarNotificacionBloqueo(): void {
+  enviarNotificacionBloqueo(): void {
     console.log('Intentando enviar notificación de bloqueo...');
     if (this.email) {
       const subject = 'Intento de recuperación de contraseña';
       const message = 'Se ha detectado un intento de recuperación de clave para su cuenta. Si usted no realizo esta solicitud, por favor contacte a soporte tecnico para asegurar la seguridad de su cuenta.';
       console.log('Datos de notificación:', { email: this.email, subject, message });
 
-      this.http.post('https://back-notificaciones.vercel.app/send-confirmation', {
+      this.http.post('https://bancopolitecnico-backend.vercel.app/send-confirmation', {
         email: this.email,
         //phoneNumber: this.phoneNumber,
         subject,
@@ -145,9 +145,9 @@ export class VerifyIdentityComponent implements OnInit {
     } else {
       console.error('No se pudo enviar la notificación de bloqueo. Información de contacto no disponible.');
     }
-  }*/
+  }
 
-    enviarNotificacionBloqueo(): void {
+    /*enviarNotificacionBloqueo(): void {
       console.log('Intentando enviar notificación de bloqueo...');
       
       if (this.email) {
@@ -156,7 +156,7 @@ export class VerifyIdentityComponent implements OnInit {
         console.log('Datos de notificación:', { email: this.email, subject, message });
     
         // Primer envío de la notificación de bloqueo
-        this.http.post('https://back-notificaciones.vercel.app/send-confirmation', {
+        this.http.post('https://bancopolitecnico-backend.vercel.app/send-confirmation', {
           email: this.email,
           subject,
           message
@@ -165,7 +165,7 @@ export class VerifyIdentityComponent implements OnInit {
             console.log('Primera notificación de bloqueo enviada:', response);
     
             // Reenvío automático de la notificación de bloqueo
-            this.http.post('https://back-notificaciones.vercel.app/send-confirmation', {
+            this.http.post('https://bancopolitecnico-backend.vercel.app/send-confirmation', {
               email: this.email,
               subject,
               message
@@ -185,7 +185,7 @@ export class VerifyIdentityComponent implements OnInit {
       } else {
         console.error('No se pudo enviar la notificación de bloqueo. Información de contacto no disponible.');
       }
-    }
+    }*/
     
   
   onKeyDown(event: KeyboardEvent, index: number): void {

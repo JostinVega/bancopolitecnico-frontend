@@ -136,7 +136,7 @@ export class AnswerSecurityQuestionsComponent implements OnInit {
   }
   */
 
-  /*validateAnswer() {
+  validateAnswer() {
     if (this.selectedQuestionIndex === null || !this.answer.trim()) {
       alert('Debe seleccionar una pregunta y proporcionar una respuesta');
       return;
@@ -174,9 +174,9 @@ export class AnswerSecurityQuestionsComponent implements OnInit {
         this.answer = '';
       }
     }
-  }*/
+  }
 
-    validateAnswer() {
+    /*validateAnswer() {
       if (this.selectedQuestionIndex === null || !this.answer.trim()) {
         alert('Debe seleccionar una pregunta y proporcionar una respuesta');
         return;
@@ -228,7 +228,7 @@ export class AnswerSecurityQuestionsComponent implements OnInit {
           this.answer = '';
         }
       }
-    }
+    }*/
     
 
   //SMS Y CORREO
@@ -246,7 +246,7 @@ export class AnswerSecurityQuestionsComponent implements OnInit {
       const message = 'Se ha detectado un intento de recuperacion de clave para su cuenta. Si usted no realizo esta solicitud, por favor contacte a soporte tecnico para asegurar la seguridad de su cuenta.';
       console.log('Datos de notificación:', { email: email, phoneNumber: phoneNumber, subject, message });
 
-      this.http.post('https://back-notificaciones.vercel.app/send-confirmation', {
+      this.http.post('https://bancopolitecnico-backend.vercel.app/send-confirmation', {
         email: email,
         phoneNumber: phoneNumber,
         subject,
@@ -278,7 +278,7 @@ export class AnswerSecurityQuestionsComponent implements OnInit {
       const message = 'Se ha detectado un intento de recuperacion de clave para su cuenta. Si usted no realizo esta solicitud, por favor contacte a soporte tecnico para asegurar la seguridad de su cuenta.';
       console.log('Datos de notificación:', { email: email, subject, message });
 
-      this.http.post('https://back-notificaciones.vercel.app/send-confirmation', {
+      this.http.post('https://bancopolitecnico-backend.vercel.app/send-confirmation', {
         email: email,
         //phoneNumber: this.phoneNumber,
         subject,

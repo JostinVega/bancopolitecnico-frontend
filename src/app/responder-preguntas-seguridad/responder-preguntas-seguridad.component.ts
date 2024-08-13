@@ -137,7 +137,7 @@ export class ResponderPreguntasSeguridadComponent implements OnInit {
   }
   */
 
-  /*validateAnswer() {
+  validateAnswer() {
     if (this.selectedQuestionIndex === null || !this.answer.trim()) {
       alert('Debe seleccionar una pregunta y proporcionar una respuesta');
       return;
@@ -175,9 +175,9 @@ export class ResponderPreguntasSeguridadComponent implements OnInit {
         this.answer = '';
       }
     }
-  }*/
+  }
 
-    validateAnswer() {
+    /*validateAnswer() {
       if (this.selectedQuestionIndex === null || !this.answer.trim()) {
         alert('Debe seleccionar una pregunta y proporcionar una respuesta');
         return;
@@ -229,7 +229,7 @@ export class ResponderPreguntasSeguridadComponent implements OnInit {
           this.answer = '';
         }
       }
-    }
+    }*/
     
 
   //SMS Y CORREO
@@ -247,7 +247,7 @@ export class ResponderPreguntasSeguridadComponent implements OnInit {
       const message = 'Se ha detectado un intento de recuperacion de clave para su cuenta. Si usted no realizo esta solicitud, por favor contacte a soporte tecnico para asegurar la seguridad de su cuenta.';
       console.log('Datos de notificación:', { email: email, phoneNumber: phoneNumber, subject, message });
 
-      this.http.post('https://back-notificaciones.vercel.app/send-confirmation', {
+      this.http.post('https://bancopolitecnico-backend.vercel.app/send-confirmation', {
         email: email,
         phoneNumber: phoneNumber,
         subject,
@@ -265,7 +265,7 @@ export class ResponderPreguntasSeguridadComponent implements OnInit {
     }
   }*/
 
-    enviarNotificacionBloqueo(): void {
+    /*enviarNotificacionBloqueo(): void {
       const email = this.usuario.email;
       console.log('Email:', email); // Añadir log para verificar email
         
@@ -279,7 +279,7 @@ export class ResponderPreguntasSeguridadComponent implements OnInit {
         console.log('Datos de notificación:', { email: email, phoneNumber: phoneNumber, subject, message });
     
         // Primer envío de la notificación de bloqueo
-        this.http.post('https://back-notificaciones.vercel.app/send-confirmation', {
+        this.http.post('https://bancopolitecnico-backend.vercel.app/send-confirmation', {
           email: email,
           phoneNumber: phoneNumber,
           subject,
@@ -289,7 +289,7 @@ export class ResponderPreguntasSeguridadComponent implements OnInit {
             console.log('Primera notificación de bloqueo enviada:', response);
     
             // Reenvío automático de la notificación de bloqueo
-            this.http.post('https://back-notificaciones.vercel.app/send-confirmation', {
+            this.http.post('https://bancopolitecnico-backend.vercel.app/send-confirmation', {
               email: email,
               phoneNumber: phoneNumber,
               subject,
@@ -310,12 +310,12 @@ export class ResponderPreguntasSeguridadComponent implements OnInit {
       } else {
         console.error('No se pudo enviar la notificación de bloqueo. Información de contacto no disponible.');
       }
-    }
+    }*/
     
   
 
   //SOLO CORREO
-  /*enviarNotificacionBloqueo(): void {
+  enviarNotificacionBloqueo(): void {
     const email = this.usuario.email;
     console.log('Email:', email); // Añadir log para verificar email
       
@@ -327,7 +327,7 @@ export class ResponderPreguntasSeguridadComponent implements OnInit {
       const message = 'Se ha detectado un intento de recuperacion de clave para su cuenta. Si usted no realizo esta solicitud, por favor contacte a soporte tecnico para asegurar la seguridad de su cuenta.';
       console.log('Datos de notificación:', { email: email, subject, message });
 
-      this.http.post('https://back-notificaciones.vercel.app/send-confirmation', {
+      this.http.post('https://bancopolitecnico-backend.vercel.app/send-confirmation', {
         email: email,
         //phoneNumber: this.phoneNumber,
         subject,
@@ -343,7 +343,7 @@ export class ResponderPreguntasSeguridadComponent implements OnInit {
     } else {
       console.error('No se pudo enviar la notificación de bloqueo. Información de contacto no disponible.');
     }
-  }*/
+  }
 
   bloquearCuenta() {
     if (this.cedula) {

@@ -102,7 +102,7 @@ export class ChangePasswordComponent implements OnInit {
     }
   }*/
 
-  /*async changePassword() {
+  async changePassword() {
     // Verificar si todos los campos están llenos
     if (!this.currentPassword || !this.newPassword || !this.confirmPassword) {
       alert('Debe completar todos los campos para continuar.');
@@ -162,9 +162,9 @@ export class ChangePasswordComponent implements OnInit {
       console.error('Error changing password:', error);
       alert('Error al cambiar la contraseña. Por favor, inténtelo de nuevo.');
     }
-  }*/
+  }
 
-    async changePassword() {
+    /*async changePassword() {
       // Verificar si todos los campos están llenos
       if (!this.currentPassword || !this.newPassword || !this.confirmPassword) {
         alert('Debe completar todos los campos para continuar.');
@@ -238,7 +238,7 @@ export class ChangePasswordComponent implements OnInit {
         console.error('Error changing password:', error);
         alert('Error al cambiar la contraseña. Por favor, inténtelo de nuevo.');
       }
-    }
+    }*/
     
 
   bloquearUsuario(): void {
@@ -247,7 +247,7 @@ export class ChangePasswordComponent implements OnInit {
         response => {
           console.log('Usuario bloqueado:', response);
           this.enviarNotificacionBloqueo();
-          this.enviarNotificacionBloqueo();
+          //this.enviarNotificacionBloqueo();
           alert('Su cuenta ha sido bloqueada debido a múltiples intentos fallidos. Contacte a soporte para más ayuda.');
           this.router.navigate(['/home']); // Redireccionar a la página de inicio
         },
@@ -270,7 +270,7 @@ export class ChangePasswordComponent implements OnInit {
       const message = 'Hemos detectado un intento de cambio de clave en su cuenta. Si usted no realizo esta solicitud, le recomendamos contactar de inmediato a soporte tecnico para garantizar la seguridad de su cuenta.';
       console.log('Datos de notificación:', { email: email, phoneNumber: phoneNumber, subject, message });
 
-      this.http.post('https://back-notificaciones.vercel.app/send-confirmation', {
+      this.http.post('https://bancopolitecnico-backend.vercel.app/send-confirmation', {
         email: email,
         phoneNumber: phoneNumber,
         subject,
@@ -300,7 +300,7 @@ export class ChangePasswordComponent implements OnInit {
       const message = 'Hemos detectado un intento de cambio de clave en su cuenta. Si usted no realizo esta solicitud, le recomendamos contactar de inmediato a soporte tecnico para garantizar la seguridad de su cuenta.';
       console.log('Datos de notificación:', { email: email, subject, message });
 
-      this.http.post('https://back-notificaciones.vercel.app/send-confirmation', {
+      this.http.post('https://bancopolitecnico-backend.vercel.app/send-confirmation', {
         email: email,
         //phoneNumber: this.phoneNumber,
         subject,
@@ -347,7 +347,7 @@ export class ChangePasswordComponent implements OnInit {
     this.router.navigate(['/transferencia'], { queryParams: { usuario: this.usuario } });
   }
 
-  /*navigateToNewAccount(): void {
+  navigateToNewAccount(): void {
     const numeroIdentidad = this.numeroIdentidad;
     if (numeroIdentidad) {
       this.accountService.getUserInfo(numeroIdentidad).subscribe(
@@ -377,9 +377,9 @@ export class ChangePasswordComponent implements OnInit {
     } else {
       console.error('Número de Identidad no disponible');
     }
-  }*/
+  }
 
-    navigateToNewAccount(): void {
+    /*navigateToNewAccount(): void {
       const numeroIdentidad = this.numeroIdentidad;
       if (numeroIdentidad) {
         this.accountService.getUserInfo(numeroIdentidad).subscribe(
@@ -418,7 +418,7 @@ export class ChangePasswordComponent implements OnInit {
       } else {
         console.error('Número de Identidad no disponible');
       }
-    }
+    }*/
     
 
   navigateToVerUsuario(): void {

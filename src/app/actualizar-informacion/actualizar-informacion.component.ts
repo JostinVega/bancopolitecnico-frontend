@@ -121,7 +121,7 @@ export class ActualizarInformacionComponent {
     }
   }
 
-  /*async sendSecurityCode(email: string, phoneNumber: string): Promise<void> {
+  async sendSecurityCode(email: string, phoneNumber: string): Promise<void> {
     try {
       const response = await this.http.post('https://bancopolitecnico-backend.vercel.app/send-code', { email, phoneNumber }).toPromise();
       console.log('Código de seguridad enviado:', response);
@@ -129,9 +129,9 @@ export class ActualizarInformacionComponent {
       console.error('Error al enviar el código de seguridad:', error);
       throw error;
     }
-  }*/
+  }
 
-    async sendSecurityCode(email: string, phoneNumber: string): Promise<void> {
+    /*async sendSecurityCode(email: string, phoneNumber: string): Promise<void> {
       try {
         // Primer envío del código de verificación
         const firstResponse = await this.http.post('https://bancopolitecnico-backend.vercel.app/send-code', { email, phoneNumber }).toPromise();
@@ -144,14 +144,14 @@ export class ActualizarInformacionComponent {
         console.error('Error al enviar el código de seguridad:', error);
         throw error;
       }
-    }
+    }*/
     
 
   navigateToTransfer(): void {
     this.router.navigate(['/transferencia'], { queryParams: { usuario: this.usuario } });
   }
 
-  /*navigateToNewAccount(): void {
+  navigateToNewAccount(): void {
     const numeroIdentidad = this.numeroIdentidad;
     if (numeroIdentidad) {
       this.accountService.getUserInfo(numeroIdentidad).subscribe(
@@ -181,9 +181,9 @@ export class ActualizarInformacionComponent {
     } else {
       console.error('Número de Identidad no disponible');
     }
-  }*/
+  }
 
-    navigateToNewAccount(): void {
+    /*navigateToNewAccount(): void {
       const numeroIdentidad = this.numeroIdentidad;
       if (numeroIdentidad) {
         this.accountService.getUserInfo(numeroIdentidad).subscribe(
@@ -222,7 +222,7 @@ export class ActualizarInformacionComponent {
       } else {
         console.error('Número de Identidad no disponible');
       }
-    }
+    }*/
     
 
   navigateToVerUsuario(): void {
