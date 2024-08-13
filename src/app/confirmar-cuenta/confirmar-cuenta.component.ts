@@ -145,7 +145,7 @@ export class ConfirmarCuentaComponent implements OnInit {
         // Enviar confirmación por correo electrónico y SMS
         if (this.email) {
           this.enviarConfirmacion(this.email);
-          this.enviarConfirmacion(this.email);
+          //this.enviarConfirmacion(this.email);
         } else {
           console.error('Datos del usuario incompletos');
         }
