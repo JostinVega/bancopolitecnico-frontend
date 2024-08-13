@@ -128,7 +128,7 @@ export class InicioComponent implements OnInit, AfterViewInit {
   }
 
 
-  /*navigateToNewAccount(): void {
+  navigateToNewAccount(): void {
     const numeroIdentidad = this.getNumeroIdentidad();
     if (numeroIdentidad) {
       this.accountService.getUserInfo(numeroIdentidad).subscribe(
@@ -158,9 +158,9 @@ export class InicioComponent implements OnInit, AfterViewInit {
     } else {
       console.error('Número de Identidad no disponible');
     }
-  }*/
+  }
 
-    navigateToNewAccount(): void {
+    /*navigateToNewAccount(): void {
       const numeroIdentidad = this.getNumeroIdentidad();
       if (numeroIdentidad) {
         this.accountService.getUserInfo(numeroIdentidad).subscribe(
@@ -199,7 +199,7 @@ export class InicioComponent implements OnInit, AfterViewInit {
       } else {
         console.error('Número de Identidad no disponible');
       }
-    }
+    }*/
     
 
   navigateToVerUsuario(): void {
