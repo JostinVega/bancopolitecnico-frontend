@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elección del tipo de cuenta - Banco Politécnico</title>
+    <link rel="stylesheet" href="tipo-cuenta.component.css">
+    <link rel="icon" type="favicon/x-icon" href="assets/img/banco.png">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="icono">
+                <img src="assets/img/banco.png" alt="PoliBanco" class="logo"> <!-- Logo del banco -->
+                <h1 class="nombre">BANCO<br>POLITÉCNICO</h1> <!-- Nombre del banco -->
+                <p class="text moving-text">Comprometidos contigo, hoy y siempre.</p>
+            </div>
+        </header>
+
+        <div class="container-fluid d-flex minh-100">
+            <div class="row flex-fill">
+                <div class="col-md-6 p-0 d-none d-md-block">
+                    <img src="assets/img/bancopolitecnico.png" alt="Imagen representativa" class="img-fluid h-100">
+                </div>
+                <div class="col-md-6 d-flex align-items-center align-items-center">
+                    <!--Formulario-->
+                    <div class="account-selection-form">
+                        <!-- Formulario de registro -->
+                        <form [formGroup]="accountSelectionForm" (ngSubmit)="onSubmit()">
+                            <h3>Elige el tipo de cuenta</h3>
+                            <div class="account-types">
+                              <div class="account-type">
+                                <input type="radio" id="savings" formControlName="accountType" value="savings">
+                                <label for="savings">
+                                  <h4>Cuenta de ahorro</h4>
+                                  <p>Al seleccionar una cuenta de ahorro, estarás optando por una opción diseñada para guardar dinero a largo plazo y acumular intereses sobre tu saldo, facilitando el ahorro regular y seguro.</p>
+                                </label>
+                              </div>
+                              <div class="account-type">
+                                <input type="radio" id="current" formControlName="accountType" value="current">
+                                <label for="current">
+                                  <h4>Cuenta corriente</h4>
+                                  <p>Al seleccionar una cuenta corriente, tendrás acceso inmediato a tus fondos para gestionar transacciones diarias y pagos frecuentes de manera rápida y conveniente, sin restricciones en el acceso a los fondos.</p>
+                                </label>
+                              </div>
+                            </div>
+                            
+                            <!-- Botones de acción del formulario -->
+                            <div class="form-buttons">
+                              <button type="submit"  class="btn-siguiente">Siguiente</button>
+                            </div>
+                        </form> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

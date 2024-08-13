@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro en Banco Politécnico</title> <!-- Título de la página -->
+    <link rel="stylesheet" href="registro.component.css"> <!-- Enlace al archivo CSS -->
+    <link rel="icon" type="favicon/x-icon" href="assets/img/banco.png"> <!-- Ícono de la pestaña -->
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6.3.1/dist/tippy.css"> <!-- Estilos para tooltips -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="icono">
+                <img src="assets/img/banco.png" alt="PoliBanco" class="logo"> <!-- Logo del banco -->
+                <h1 class="nombre">BANCO<br>POLITÉCNICO</h1> <!-- Nombre del banco -->
+                <p class="text moving-text">Comprometidos contigo, hoy y siempre.</p>
+            </div>
+        </header>
+
+        <div class="container-fluid d-flex minh-100">
+            <div class="row flex-fill">
+                <div class="col-md-6 p-0 d-none d-md-block">
+                    <img src="assets/img/bancopolitecnico.png" alt="Imagen representativa" class="img-fluid h-100">
+                </div>
+                <div class="col-md-6 d-flex align-items-center align-items-center">
+                    <!--Formulario-->
+                    <div class="registration-form" (ngSubmit)="onSubmit()">
+                        <!-- Formulario de registro -->
+                        <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+                            <!-- ID Field -->
+                            <div class="form-group">
+                              <label for="numero_identidad">Número de identificación:</label>
+                              <input type="text" id="numero_identidad" formControlName="numero_identidad" class="form-control" (input)="onInputChange($event)">
+                              <div *ngIf="registrationForm.get('numero_identidad')?.errors?.['pattern'] && (registrationForm.get('numero_identidad')?.dirty || registrationForm.get('numero_identidad')?.touched)" class="error-message">Ingrese un número de cédula válido.</div>
+                              <div *ngIf="registrationForm.get('numero_identidad')?.errors?.['required'] && (registrationForm.get('numero_identidad')?.dirty || registrationForm.get('numero_identidad')?.touched)" class="error-message">Este campo es obligatorio.</div>
+                              <span *ngIf="!registrationForm.get('numero_identidad')?.invalid" class="icon-check"><i class="fas fa-check-circle"></i></span>
+                              <span *ngIf="registrationForm.get('numero_identidad')?.invalid" class="icon-error"><i class="fas fa-exclamation-circle"></i></span>
+                            </div>
+                          
+                            <!-- Name Field -->
+                            <div class="form-group">
+                              <label for="nombre_completo">Nombre completo:</label>
+                              <input type="text" id="nombre_completo" formControlName="nombre_completo" class="form-control" (input)="onInputChangeName($event)">
+                              <div *ngIf="registrationForm.get('nombre_completo')?.invalid && (registrationForm.get('nombre_completo')?.dirty || registrationForm.get('nombre_completo')?.touched)" class="error-message">Este campo es obligatorio.</div>
+                              <span *ngIf="!registrationForm.get('nombre_completo')?.invalid" class="icon-check"><i class="fas fa-check-circle"></i></span>
+                              <span *ngIf="registrationForm.get('nombre_completo')?.invalid" class="icon-error"><i class="fas fa-exclamation-circle"></i></span>
+                            </div>
+                          
+                            <!-- Email Field -->
+                            <div class="form-group">
+                              <label for="correo_electronico">Dirección de correo electrónico:</label>
+                              <input type="correo_electronico" id="correo_electronico" formControlName="correo_electronico" class="form-control">
+                              <div *ngIf="registrationForm.get('correo_electronico')?.errors?.['required'] && (registrationForm.get('correo_electronico')?.dirty || registrationForm.get('correo_electronico')?.touched)" class="error-message">Este campo es obligatorio.</div>
+                              <div *ngIf="registrationForm.get('correo_electronico')?.errors?.['pattern'] && (registrationForm.get('correo_electronico')?.dirty || registrationForm.get('correo_electronico')?.touched)" class="error-message">El formato de correo electrónico no es válido.</div>
+                              <div *ngIf="registrationForm.get('correo_electronico')?.errors?.['domain'] && (registrationForm.get('correo_electronico')?.dirty || registrationForm.get('correo_electronico')?.touched)" class="error-message">El dominio del correo electrónico no es válido (gmail, outlook, hotmail, epn.edu.ec).</div>
+                              <span *ngIf="!registrationForm.get('correo_electronico')?.invalid" class="icon-check"><i class="fas fa-check-circle"></i></span>
+                              <span *ngIf="registrationForm.get('correo_electronico')?.invalid" class="icon-error"><i class="fas fa-exclamation-circle"></i></span>
+                            </div>
+                          
+                            <!-- Phone Field -->
+                             <!--
+                            <div class="form-group">
+                              <label for="numero_telefono">Número de teléfono móvil:</label>
+                              <input type="text" id="numero_telefono" formControlName="numero_telefono" class="form-control" (input)="onInputChangePhone($event)">
+                              <div *ngIf="registrationForm.get('numero_telefono')?.errors?.['pattern'] && (registrationForm.get('numero_telefono')?.dirty || registrationForm.get('numero_telefono')?.touched)" class="error-message">Ingrese un número de teléfono válido.</div>
+                              <div *ngIf="registrationForm.get('numero_telefono')?.errors?.['required'] && (registrationForm.get('numero_telefono')?.dirty || registrationForm.get('numero_telefono')?.touched)" class="error-message">Este campo es obligatorio.</div>
+                              <span *ngIf="!registrationForm.get('numero_telefono')?.invalid" class="icon-check"><i class="fas fa-check-circle"></i></span>
+                              <span *ngIf="registrationForm.get('numero_telefono')?.invalid" class="icon-error"><i class="fas fa-exclamation-circle"></i></span>
+                            </div>
+                          -->
+
+                          <div class="form-group">
+                            <label for="numero_telefono">Número de teléfono móvil:</label>
+                            <input type="text" id="numero_telefono" formControlName="numero_telefono" class="form-control" (input)="onInputChangePhone($event)">
+                            <div *ngIf="registrationForm.get('numero_telefono')?.errors?.['pattern'] && (registrationForm.get('numero_telefono')?.dirty || registrationForm.get('numero_telefono')?.touched)" class="error-message">Ingrese un número de teléfono válido.</div>
+                            <div *ngIf="registrationForm.get('numero_telefono')?.errors?.['required'] && (registrationForm.get('numero_telefono')?.dirty || registrationForm.get('numero_telefono')?.touched)" class="error-message">Este campo es obligatorio.</div>
+                            <span *ngIf="!registrationForm.get('numero_telefono')?.invalid" class="icon-check"><i class="fas fa-check-circle"></i></span>
+                            <span *ngIf="registrationForm.get('numero_telefono')?.invalid" class="icon-error"><i class="fas fa-exclamation-circle"></i></span>
+                          </div>
+                          
+                            <!-- Date of Birth (fecha_nacimiento) Field -->
+                            <div class="form-group">
+                              <label for="fecha_nacimiento">Fecha de nacimiento:</label>
+                              <input type="date" id="fecha_nacimiento" formControlName="fecha_nacimiento" class="form-control">
+                              <div *ngIf="registrationForm.get('fecha_nacimiento')?.hasError('menorDeEdad') && (registrationForm.get('fecha_nacimiento')?.dirty || registrationForm.get('fecha_nacimiento')?.touched)" class="error-message">
+                                Debe ser mayor de edad para poder registrarse.
+                              </div>
+                              <div *ngIf="registrationForm.get('fecha_nacimiento')?.invalid && (registrationForm.get('fecha_nacimiento')?.dirty || registrationForm.get('fecha_nacimiento')?.touched)" class="error-message">Ingrese una fecha válida.</div>
+                              <span *ngIf="!registrationForm.get('fecha_nacimiento')?.invalid" class="icon-check"><i class="fas fa-check-circle"></i></span>
+                              <span *ngIf="registrationForm.get('fecha_nacimiento')?.invalid" class="icon-error"><i class="fas fa-exclamation-circle"></i></span>
+                            </div>
+                          
+                            <div class="form-buttons">
+                                <button type="button" (click)="goBack()" class="btn-regresar">Regresar</button>
+                                <button type="submit" [disabled]="registrationForm.invalid" class="btn-siguiente">Siguiente</button>
+                            </div>
+                            <div *ngIf="errorMessage" class="error-message">
+                              <p>{{ errorMessage }}</p>
+                            </div>
+                          </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+</body>
+</html>

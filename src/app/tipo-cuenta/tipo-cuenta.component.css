@@ -1,0 +1,168 @@
+/* Estilos para la página de selección de tipo de cuenta */
+/* Estilos generales del cuerpo */
+/* Estilos para el cuerpo del documento */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #E3F5EE !important;
+    color: #333;
+}
+
+/* Estilos para el contenedor principal */
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 100px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Animación */
+@keyframes slideAndFade {
+    0% {
+        transform: translateX(-100%);
+        opacity: 1;
+    }
+    70% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* Estilos para el texto animado */
+.moving-text {
+    display: flex;
+    font-size: 1em;
+    color: #C7D8E4;
+    animation: slideAndFade 3s linear normal;
+    width: 40%;
+    text-align: center;
+    opacity: 0;
+}
+
+/* Estilos para el ícono del banco */
+.icono {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    margin-bottom: 20px;
+}
+
+.icono img.logo {
+    max-width: 60px;
+    margin-right: 10px;
+}
+
+.icono h1.nombre {
+    font-size: 20px;
+    color: #2E86C1;
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif, Geneva, Tahoma, sans-serif;
+}
+
+/* Estilos para el formulario de selección de tipo de cuenta */
+.account-selection-form {
+    flex: 1;
+    width: 80%; /* Ajusta el ancho del contenedor */
+    max-width: 400px; /* Establece un ancho máximo para el contenedor */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.account-selection-form form {
+    padding: 5px 35px;
+    text-align: center;
+}
+
+.account-selection-form h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #206ea9;
+}
+
+.account-selection-form .account-types {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.account-selection-form .account-type {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.account-selection-form .account-type input {
+    margin-right: 10px;
+    
+}
+
+.account-selection-form .account-type label {
+    cursor: pointer;
+}
+
+.account-selection-form .account-type h4 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #206ea9;
+}
+
+.account-selection-form .account-type p {
+    font-size: 10px;
+    color: #333;
+    text-align: justify;
+}
+
+/* Estilos para los botones del formulario */
+.form-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.form-buttons button {
+    background-color: #206ea9;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.form-buttons button:hover {
+    background-color: #2E86C1;
+}
+
+
+
+/* Responsive*/
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .account-selection-form {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .account-selection-form {
+        padding: 10px;
+    }
+}
