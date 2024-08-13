@@ -72,14 +72,13 @@ export class ConfirmarReseteoUsernameComponent implements OnInit{
       const subject = 'Confirmación de Restablecimiento de Usuario - Banco Politécnico';
       const message = 'Su usuario ha sido restablecido con éxito.';
       this.enviarConfirmacion(this.email, subject, message);
-      this.enviarConfirmacion(this.email, subject, message);
     } else {
       console.error('Datos del usuario incompletos');
     }
   }
 
 
-  enviarConfirmacion(email: string, subject: string, message: string): void {
+  /*enviarConfirmacion(email: string, subject: string, message: string): void {
     const payload = { email, subject, message };
     console.log('Payload enviado:', payload); // Log para verificar el payload
     
@@ -102,10 +101,10 @@ export class ConfirmarReseteoUsernameComponent implements OnInit{
         console.error('Error al enviar la primera confirmación:', confirmError);
       }
     );
-  }
+  }*/
   
 
-  /*enviarConfirmacion(email: string, subject: string, message: string): void {
+  enviarConfirmacion(email: string, subject: string, message: string): void {
     const payload = { email, subject, message };
     console.log('Payload enviado:', payload); // Log para verificar el payload
     
@@ -118,7 +117,7 @@ export class ConfirmarReseteoUsernameComponent implements OnInit{
         console.error('Error al enviar confirmación:', confirmError);
       }
     );
-  }*/
+  }
   
 
   goBack() {

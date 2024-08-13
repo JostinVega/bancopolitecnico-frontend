@@ -73,7 +73,7 @@ export class ConfirmResetComponent implements OnInit{
     }
   }
 
-  enviarConfirmacion(email: string, subject: string, message: string): void {
+  /*enviarConfirmacion(email: string, subject: string, message: string): void {
     const payload = { email, subject, message };
     console.log('Payload enviado:', payload); // Log para verificar el payload
     
@@ -96,10 +96,10 @@ export class ConfirmResetComponent implements OnInit{
         console.error('Error al enviar la primera confirmación:', confirmError);
       }
     );
-  }
+  }*/
   
 
-  /*enviarConfirmacion(email: string, subject: string, message: string): void {
+  enviarConfirmacion(email: string, subject: string, message: string): void {
     const payload = { email, subject, message };
     console.log('Payload enviado:', payload); // Log para verificar el payload
     
@@ -112,7 +112,7 @@ export class ConfirmResetComponent implements OnInit{
         console.error('Error al enviar confirmación:', confirmError);
       }
     );
-  }*/
+  }
   
 
 
