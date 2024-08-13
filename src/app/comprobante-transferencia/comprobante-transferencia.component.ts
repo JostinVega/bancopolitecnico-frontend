@@ -202,7 +202,7 @@ export class ComprobanteTransferenciaComponent implements OnInit {
     
         if (this.email && this.phoneNumber) {
           this.enviarConfirmacion(this.email, this.amount, this.contactName, this.numeroCuenta);
-          this.enviarConfirmacion(this.email, this.amount, this.contactName, this.numeroCuenta);
+          //this.enviarConfirmacion(this.email, this.amount, this.contactName, this.numeroCuenta);
         } else {
           console.error('Datos del usuario incompletos');
         }
